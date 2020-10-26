@@ -1,20 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+var FontAwesome = require('react-fontawesome')
 
 function Navbar() {
   return (
     <nav className="" id="navbar-container">
-      <h1>Logo</h1>
+      <NavLink exact to='/'>
+        <h1 className="logo">
+          <FontAwesome className="fab fa-twitter" name="twitter" size="2x" />
+        </h1>
+      </NavLink>
       <ul className="nav-links">
-        <Link to='/'>
+        <NavLink exact to='/' activeClassName="current">
           <li>Home</li>
-        </Link>
-        <Link to='/search'>
+        </NavLink>
+        <NavLink to='/search' activeClassName="current">
           <li>Search</li>
-        </Link>
-        <Link to='/random'>
+        </NavLink>
+        <NavLink to='/random' activeClassName="current">
           <li>Random</li>
-        </Link>
+        </NavLink>
       </ul>
     </nav>
   )

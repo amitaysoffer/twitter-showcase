@@ -12,11 +12,11 @@ function App() {
     <Router>
       <div className="app" id="grid-container">
         <Navbar />
-          <main id="main-container">
-            <Route path="/" exact component={Home} />
-            <Route path="/search" component={Search} />
-            <Route path="/random" component={Random} />
-          </main>
+        <main id="main-container">
+          <Route path="/" exact component={Home} />
+          <Route path="/search" component={Search} />
+          <Route path="/random" component={Random} />
+        </main>
         <Footer />
       </div>
     </Router>
