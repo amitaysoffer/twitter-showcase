@@ -105,7 +105,6 @@ nav li:hover {
 }
 
 #search-container input {
-  /* display: inline-block; */
   padding: 10px;
   width: 100%;
 }
@@ -127,3 +126,38 @@ nav li:hover {
   margin: 15px 0px;
   width: 51%;
 }
+
+/* card */
+
+.card {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.image-wrapper {
+  border: 3px solid blue;
+}
+
+.content-wrapper {
+  border: 3px solid green;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 5px;
+}
+
+.user {
+  font-size: 1.3em;
+}
+
+.image-wrapper img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+.content-wrapper .first-row span{
+  margin-right: 10px;
+}
+
