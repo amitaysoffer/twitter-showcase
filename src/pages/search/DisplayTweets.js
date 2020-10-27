@@ -6,7 +6,7 @@ export default function DisplayTweets(props) {
   return (
     <div className="card">
       <div className="image-wrapper">
-        <img src={profileImage} alt="image" />
+        <img src={profileImage} alt="profileImage" />
       </div>
       <div className="content-wrapper">
         <div className="first-row">
@@ -31,15 +31,15 @@ export default function DisplayTweets(props) {
         <div className="last-row">
           <div className="comments">
             <FontAwesome className="far fa-comment" name="comment" />
-            <a>{comments} </a>
+            <a href="/#">{comments}</a>
           </div>
           <div className="retweets">
             <FontAwesome className="fas fa-retweet" name="retweet" />
-            <a > {retwitted} </a>
+            <a href="/#">{retwitted}</a>
           </div>
           <div className="likes">
             <FontAwesome className="far fa-heart" name="heart" />
-            <a >{likes}</a>
+            <a href="/#">{likes}</a>
           </div>
         </div>
       </div>
