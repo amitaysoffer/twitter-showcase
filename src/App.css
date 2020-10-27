@@ -133,6 +133,7 @@ nav li:hover {
   /* border: 1px solid red; */
   display: grid;
   grid-template-columns: 1fr 5fr;
+
 }
 
 .image-wrapper {
@@ -157,7 +158,22 @@ nav li:hover {
   width: 70%;
 }
 
-.content-wrapper .first-row span{
+.first-row {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.first-row span {
   margin-right: 10px;
 }
 
+.last-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.last-row a {
+  padding-left: 10px;
+}

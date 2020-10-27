@@ -9,27 +9,40 @@ export default function DisplayTweets(props) {
         <img src={profileImage} alt="image" />
       </div>
       <div className="content-wrapper">
-
         <div className="first-row">
-          <span className="user">
-            {user}
-          </span>
-          <FontAwesome className="far fa-check-double" name="check" />
-          <span className="username">
-            {username}
-          </span>
-          <FontAwesome className="fas fa-paw" name="paw" />
-          <span className="date">
-            {date}
-          </span>
+          <div className="user">
+            <span>{user}</span>
+            <FontAwesome className="far fa-check-double" name="check" />
+          </div>
+          <div className="username">
+            <span>{username}</span>
+            <FontAwesome className="fas fa-paw" name="paw" />
+          </div>
+          <div className="date">
+            <span>{date}</span>
+          </div>
         </div>
-
-        <p>{text}</p>
-        <div>{link}</div>
-        <p>{comments} {retwitted} {likes}</p>
+        <div className="text">
+          <span>{text}</span>
+        </div>
+        <div className="link">
+          <div>{link}</div>
+        </div>
+        <div className="last-row">
+          <div className="comments">
+            <FontAwesome className="far fa-comment" name="comment" />
+            <a>{comments} </a>
+          </div>
+          <div className="retweets">
+            <FontAwesome className="fas fa-retweet" name="retweet" />
+            <a > {retwitted} </a>
+          </div>
+          <div className="likes">
+            <FontAwesome className="far fa-heart" name="heart" />
+            <a >{likes}</a>
+          </div>
+        </div>
       </div>
-
     </div>
-
   )
 }
