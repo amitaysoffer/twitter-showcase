@@ -145,4 +145,4 @@ const tweetsData = [
   }
 ]
 
-export default tweetsData
+module.exports = tweetsData

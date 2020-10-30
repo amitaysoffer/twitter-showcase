@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import tweetsData from '../../twitterData'
 import SearchForm from './SearchForm'
 import DisplayTweets from './DisplayTweets'
 import './Search.css';
 
 function Search() {
-  const [data] = useState(tweetsData)
+  const [data, setData] = useState([])
   const [inputValue, setInputValue] = useState()
   const [tweets, setTweets] = useState([])
 
@@ -14,17 +13,10 @@ function Search() {
   }
 
   useEffect(() => {
-    fetch('/api/ahmd')
+    fetch('/api/')
       .then(res => res.json())
-      .then(data => console.log(data))
-  }, [])
-
-  // componentDidMount() {
-  //   fetch('/api/amitay')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //   // .then(customers => this.setState({ customers }, () => console.log('Customers fetched...', customers)));
-  // }
+      .then(data => setData(data))
+  }, [data])
 
   function handleSearchClick(e) {
     e.preventDefault()
