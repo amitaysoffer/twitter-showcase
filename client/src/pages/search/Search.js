@@ -13,6 +13,19 @@ function Search() {
     setInputValue(e.target.value)
   }
 
+  useEffect(() => {
+    fetch('/api/ahmd')
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }, [])
+
+  // componentDidMount() {
+  //   fetch('/api/amitay')
+  //     .then(res => res.json())
+  //     .then(data => console.log(data))
+  //   // .then(customers => this.setState({ customers }, () => console.log('Customers fetched...', customers)));
+  // }
+
   function handleSearchClick(e) {
     e.preventDefault()
 
