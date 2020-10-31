@@ -13,10 +13,14 @@ function Search() {
   }
 
   useEffect(() => {
-    fetch('/api/')
+    fetch('/api/tweets')
       .then(res => res.json())
-      .then(data => setData(data))
-  }, [data])
+      // .then(data => setData(data))
+      .then(function (data) {
+        console.log(data)
+        // setData(data);
+      })
+  }, [])
 
   function handleSearchClick(e) {
     e.preventDefault()
