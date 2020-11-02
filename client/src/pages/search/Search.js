@@ -15,11 +15,7 @@ function Search() {
   useEffect(() => {
     fetch('/api/tweets')
       .then(res => res.json())
-      // .then(data => setData(data))
-      .then(function (data) {
-        console.log(data)
-        // setData(data);
-      })
+      .then(data => console.log(data))
   }, [])
 
   function handleSearchClick(e) {
