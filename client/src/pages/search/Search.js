@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchForm from './SearchForm'
 import DisplayTweets from './DisplayTweets'
 import './Search.css';
+import axios from 'axios';
 
 function Search() {
   const [data, setData] = useState([])
@@ -12,14 +13,31 @@ function Search() {
     setInputValue(e.target.value)
   }
 
-  useEffect(() => {
-    fetch('/api/tweets')
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }, [])
+  // useEffect(() => {
+  //   fetch('/api/search')
+  //     .then(res => res.json())
+  //     .then(data => console.log(data))
+  // }, [])
 
   function handleSearchClick(e) {
     e.preventDefault()
+
+    axios({
+      method: 'get',
+      url: '/api/search',
+      data: {
+        input: 'football'
+      }
+    })
+      .then(res => {
+        console.log(res.data);
+      }).catch(err => {
+        console.log(err)
+      })
+
+    // fetch('/api/search')
+    //   .then(res => res.json())
+    //   .then(data => console.log(data))
 
     const tweetsSelected = e.target.id === 'username' ?
       data.filter(tweet => tweet.user.toLowerCase().includes(inputValue)) :
