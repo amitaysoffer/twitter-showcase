@@ -40,7 +40,7 @@ app.get('/api/search', async (req, res) => {
   const queryString = req.query.variable;
   axios({
     method: 'get',
-    url: `https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&count=5&result_type=popular`,
+    url: `https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&count=5&result_type=popular&tweet_mode=extended)`,
     headers: {
       "Authorization": `Bearer ${token}`,
     },
@@ -49,7 +49,6 @@ app.get('/api/search', async (req, res) => {
       res.json(response.data);
     })
 });
-
 
 
 app.listen(port, () => `Server running on port ${port}`);

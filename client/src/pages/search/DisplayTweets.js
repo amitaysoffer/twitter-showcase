@@ -3,7 +3,7 @@ var FontAwesome = require('react-fontawesome')
 
 export default function DisplayTweets(props) {
   // debugger
-  const { text, user, favorite_count, retweet_count } = props.item
+  const { text, user, favorite_count, retweet_count, entities } = props.item
   return (
     <div className="card">
       {/* <img src={user.profile_image_url} alt="profile-image"/> 
@@ -27,7 +27,7 @@ export default function DisplayTweets(props) {
             <FontAwesome className="far fa-check-double" name="check" />
           </div>
           <div className="username">
-            <span>{user.screen_name}</span>
+            <span>@{user.screen_name}</span>
             <FontAwesome className="fas fa-paw" name="paw" />
           </div>
           {/* <div className="date">
@@ -37,9 +37,10 @@ export default function DisplayTweets(props) {
         <div className="text">
           <span>{text}</span>
         </div>
-        {/* <div className="link">
-          <div>{link}</div>
-        </div> */}
+        <div className="link">
+          {/* <div>{entities.image[0].expanded_url}</div> */}
+          {/* <img src={entities.media[0].expanded_url} alt="link"/> */}
+        </div>
         <div className="last-row">
           <div className="comments">
             <FontAwesome className="far fa-comment" name="comment" />
