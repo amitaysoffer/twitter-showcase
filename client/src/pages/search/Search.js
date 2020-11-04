@@ -17,12 +17,12 @@ function Search() {
     console.log(data)
   }, [data])
 
-   function handleSearchClick(e) {
+  function handleSearchClick(e) {
     e.preventDefault()
 
-     axios({
+    axios({
       method: 'get',
-      url: `api/search/?variable=${inputValue}`,
+      url: `api/search/?tweet_mode='extended'&variable=${inputValue}`,
     })
       .then(res => {
         console.log(res.data);

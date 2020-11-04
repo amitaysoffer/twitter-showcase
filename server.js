@@ -40,7 +40,7 @@ app.get('/api/search', async (req, res) => {
   const queryString = req.query.variable;
   axios({
     method: 'get',
-    url: `https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&count=5&result_type=popular&tweet_mode=extended)`,
+    url: `https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&count=5&result_type=popular`,
     headers: {
       "Authorization": `Bearer ${token}`,
     },
