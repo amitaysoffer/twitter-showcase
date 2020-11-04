@@ -3,7 +3,7 @@ var FontAwesome = require('react-fontawesome')
 
 export default function DisplayTweets(props) {
   // debugger
-  const { text, user, created_at, favorite_count, retweet_count, entities } = props.item
+  const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.item
   return (
     <div className="card">
       {/* <img src={user.profile_image_url} alt="profile-image"/> 
@@ -35,7 +35,7 @@ export default function DisplayTweets(props) {
           </div>
         </div>
         <div className="text">
-          <span>{text}</span>
+          <span>{full_text}</span>
         </div>
         <div className="link">
           {/* <div>{entities.image[0].expanded_url}</div> */}

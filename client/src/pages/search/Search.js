@@ -22,7 +22,7 @@ function Search() {
 
     axios({
       method: 'get',
-      url: `api/search/?tweet_mode='extended'&variable=${inputValue}`,
+      url: `api/search/?string=${inputValue}`,
     })
       .then(res => {
         console.log(res.data);
