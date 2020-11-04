@@ -13,46 +13,39 @@ function Search() {
     setInputValue(e.target.value)
   }
 
-  // useEffect(() => {
-  //   fetch('/api/search')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  // }, [])
+  useEffect(() => {
+    console.log(data)
+  }, [data])
 
-  function handleSearchClick(e) {
+   function handleSearchClick(e) {
     e.preventDefault()
 
-    axios({
+     axios({
       method: 'get',
-      url: '/api/search',
-      data: {
-        input: 'football'
-      }
+      url: `api/search/?variable=${inputValue}`,
     })
       .then(res => {
         console.log(res.data);
+        // setData(prevData => prevData = res.data.statuses)
+        setData(res.data.statuses)
       }).catch(err => {
         console.log(err)
       })
 
-    // fetch('/api/search')
-    //   .then(res => res.json())
-    //   .then(data => console.log(data))
-
-    const tweetsSelected = e.target.id === 'username' ?
-      data.filter(tweet => tweet.user.toLowerCase().includes(inputValue)) :
-      data.filter(tweet => tweet.text.toLowerCase().includes(inputValue))
+    // const tweetsSelected = e.target.id === 'username' ?
+    //   data.filter(tweet => tweet.user.toLowerCase().includes(inputValue)) :
+    //   data.filter(tweet => tweet.text.toLowerCase().includes(inputValue))
 
     // returns only 5 characters
-    setTweets(tweetsSelected.slice(0, 5))
+    // setTweets(tweetsSelected.slice(0, 5))
   }
 
   return (
     <div id="search-container">
       <SearchForm handleSearchClick={handleSearchClick} getInputValue={getInputValue} />
       <div id="tweets">
-        {tweets.map(tweet =>
-          <DisplayTweets tweet={tweet} key={tweet.id} />)}
+        {data.map(item =>
+          <DisplayTweets item={item} key={item.id} />)}
       </div>
     </div>
   )

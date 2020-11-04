@@ -18,6 +18,7 @@ let getToken = () => {
         username: "sbZZacfAEvxKVykuX4UhiqM06",
         password: "MSbwMMURuNpV3awcQzoGykYKDyksnNLooCNrWldDfYDgepdNLE",
       },
+      // npm install dotenv
     };
     bearer = axios
       .post(
@@ -36,20 +37,17 @@ let getToken = () => {
 
 app.get('/api/search', async (req, res) => {
   const token = await getToken()
+  const queryString = req.query.variable;
   axios({
     method: 'get',
-    url: `https://api.twitter.com/1.1/search/tweets.json?q=football`,
+    url: `https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&count=5&result_type=popular`,
     headers: {
       "Authorization": `Bearer ${token}`,
     },
   })
     .then(function (response) {
-      // console.log(response.data)
-      console.log('----------------------------')
-      console.log(req)
       res.json(response.data);
     })
-
 });
 
 

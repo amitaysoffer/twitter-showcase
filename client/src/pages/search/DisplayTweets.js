@@ -2,44 +2,56 @@ import React from 'react'
 var FontAwesome = require('react-fontawesome')
 
 export default function DisplayTweets(props) {
-  const { profileImage, user, username, date, text, link, comments, retwitted, likes } = props.tweet
+  // debugger
+  const { text, user, favorite_count, retweet_count } = props.item
   return (
     <div className="card">
+      {/* <img src={user.profile_image_url} alt="profile-image"/> 
+      <br/>
+      <div>Name: {user.name}</div>
+      <div>Screen_name: @{user.screen_name}</div>
+      <div>* {created_at}</div>
+      <br />
+      <div>text: {text}</div>
+      <br />
+      <div>retweets: {retweeted_status.retweet_count}</div>
+      <div>likes: {retweeted_status.favorite_count}</div> */}
+
       <div className="image-wrapper">
-        <img src={profileImage} alt="profileImage" />
+        <img src={user.profile_image_url} alt="profileImage" />
       </div>
       <div className="content-wrapper">
         <div className="first-row">
           <div className="user">
-            <span>{user}</span>
+            <span>{user.name}</span>
             <FontAwesome className="far fa-check-double" name="check" />
           </div>
           <div className="username">
-            <span>{username}</span>
+            <span>{user.screen_name}</span>
             <FontAwesome className="fas fa-paw" name="paw" />
           </div>
-          <div className="date">
-            <span>{date}</span>
-          </div>
+          {/* <div className="date">
+            <span>{created_at}</span>
+          </div> */}
         </div>
         <div className="text">
           <span>{text}</span>
         </div>
-        <div className="link">
+        {/* <div className="link">
           <div>{link}</div>
-        </div>
+        </div> */}
         <div className="last-row">
           <div className="comments">
             <FontAwesome className="far fa-comment" name="comment" />
-            <a href="/#">{comments}</a>
+            <a href="/#">1k</a>
           </div>
           <div className="retweets">
             <FontAwesome className="fas fa-retweet" name="retweet" />
-            <a href="/#">{retwitted}</a>
+            <a href="/#">{retweet_count}</a>
           </div>
           <div className="likes">
             <FontAwesome className="far fa-heart" name="heart" />
-            <a href="/#">{likes}</a>
+            <a href="/#">{favorite_count}</a>
           </div>
         </div>
       </div>
