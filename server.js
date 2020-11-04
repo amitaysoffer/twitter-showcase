@@ -27,7 +27,7 @@ let getToken = () => {
         config
       )
       .then((response) => {
-        // console.log(response.data.access_token);
+        console.log(response.data.access_token);
         return response.data.access_token;
       })
       .catch((error) => console.log(`Something went wrong: ${error}`));
