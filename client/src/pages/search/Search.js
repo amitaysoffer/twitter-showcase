@@ -20,23 +20,35 @@ function Search() {
   function handleSearchClick(e) {
     e.preventDefault()
 
-    axios({
-      method: 'get',
-      url: `api/search/?string=${inputValue}`,
-    })
-      .then(res => {
-        console.log(res.data);
-        setData(res.data.statuses)
-      }).catch(err => {
-        console.log(err)
+    if (e.target.id === 'username') {
+      axios({
+        method: 'get',
+        url: `api/username/?string=${inputValue}`,
       })
-
-    // const tweetsSelected = e.target.id === 'username' ?
-    //   data.filter(tweet => tweet.user.toLowerCase().includes(inputValue)) :
-    //   data.filter(tweet => tweet.text.toLowerCase().includes(inputValue))
-
-    // returns only 5 characters
-    // setTweets(tweetsSelected.slice(0, 5))
+        .then(res => {
+          // debugger
+          console.log(res.data);
+          setData(res.data)
+        })
+        .catch(err => {
+          // debugger
+          alert('There is no user under that name')
+          console.log('error client side', err)
+        })
+    } else {
+      axios({
+        method: 'get',
+        url: `api/search/?string=${inputValue}`,
+      })
+        .then(res => {
+          console.log(res.data);
+          debugger
+          setData(res.data.statuses)
+        }).catch(err => {
+          debugger
+          console.log(err)
+        })
+    }
   }
 
   return (

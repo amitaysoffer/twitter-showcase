@@ -4,21 +4,15 @@ var FontAwesome = require('react-fontawesome')
 export default function DisplayTweets(props) {
   // debugger
   const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.item
+  console.log(props.item)
   return (
     <div className="card">
-      {/* <img src={user.profile_image_url} alt="profile-image"/> 
-      <br/>
-      <div>Name: {user.name}</div>
-      <div>Screen_name: @{user.screen_name}</div>
-      <div>* {created_at}</div>
-      <br />
-      <div>text: {text}</div>
-      <br />
-      <div>retweets: {retweeted_status.retweet_count}</div>
-      <div>likes: {retweeted_status.favorite_count}</div> */}
-
       <div className="image-wrapper">
-        <img src={user.profile_image_url} alt="profileImage" />
+        <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank">
+          <img
+            src={user.profile_image_url}
+            alt="profileImage" />
+        </a>
       </div>
       <div className="content-wrapper">
         <div className="first-row">
@@ -31,15 +25,20 @@ export default function DisplayTweets(props) {
             <FontAwesome className="fas fa-paw" name="paw" />
           </div>
           <div className="date">
-            <span>{created_at}</span>
+            <span>{created_at.split('+')[0]}</span>
           </div>
         </div>
         <div className="text">
-          <span>{full_text}</span>
+          <span>{full_text.substring(props.item.display_text_range[0], props.item.display_text_range[1] + 1)}</span>
         </div>
         <div className="link">
-          {/* <div>{entities.image[0].expanded_url}</div> */}
-          {/* <img src={entities.media[0].media_url} alt="link" /> */}
+          <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank">
+            <img
+              src={entities.media ? entities.media[0].media_url : null}
+              height={entities.media ? entities.media[0].sizes.thumb.h : null}
+              width={entities.media ? entities.media[0].sizes.thumb.w : null}
+            />
+          </a>
         </div>
         <div className="last-row">
           <div className="comments">

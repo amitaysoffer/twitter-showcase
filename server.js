@@ -35,6 +35,26 @@ let getToken = () => {
   return bearer;
 };
 
+
+app.get('/api/username', async (req, res) => {
+  const token = await getToken()
+  const queryString = req.query.string;
+  axios({
+    method: 'get',
+    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=5&result_type=popular`,
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    },
+  })
+    .then(function (response) {
+      res.send(response.data);
+    })
+    .catch(function (err) {
+      console.log('Something went wrong', err)
+      res.sendStatus(err.response.status)
+    })
+});
+
 app.get('/api/search', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
@@ -49,7 +69,6 @@ app.get('/api/search', async (req, res) => {
       res.json(response.data);
     })
 });
-
 
 
 

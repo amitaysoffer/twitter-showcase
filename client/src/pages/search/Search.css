@@ -61,7 +61,7 @@
 
 .image-wrapper img {
   border-radius: 50%;
-  width: 50%;
+  width: 65%;
 }
 
 .first-row {
@@ -83,6 +83,13 @@
   padding-left: 10px;
 }
 
+.link {
+  text-align: center;
+}
+
+.text {
+  margin: 5px 0px 10px 0;
+}
 /* Mobile */
 @media(max-width: 1000px) {
   #search-container {
