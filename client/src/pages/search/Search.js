@@ -26,7 +26,6 @@ function Search() {
     })
       .then(res => {
         console.log(res.data);
-        // setData(prevData => prevData = res.data.statuses)
         setData(res.data.statuses)
       }).catch(err => {
         console.log(err)
