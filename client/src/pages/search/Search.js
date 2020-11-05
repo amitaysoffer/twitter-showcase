@@ -5,7 +5,6 @@ import './Search.css';
 import axios from 'axios';
 
 function Search() {
-  const [data, setData] = useState([])
   const [inputValue, setInputValue] = useState()
   const [tweets, setTweets] = useState([])
 
@@ -14,8 +13,8 @@ function Search() {
   }
 
   useEffect(() => {
-    console.log(data)
-  }, [data])
+    console.log(tweets)
+  }, [tweets])
 
   function handleSearchClick(e) {
     e.preventDefault()
@@ -28,7 +27,7 @@ function Search() {
         .then(res => {
           // debugger
           console.log(res.data);
-          setData(res.data)
+          setTweets(res.data)
         })
         .catch(err => {
           // debugger
@@ -42,11 +41,10 @@ function Search() {
       })
         .then(res => {
           console.log(res.data);
-          debugger
-          setData(res.data.statuses)
+          setTweets(res.data.statuses)
         }).catch(err => {
-          debugger
-          console.log(err)
+          alert('There is no content as such')
+          console.log('error client side', err)
         })
     }
   }
@@ -55,8 +53,8 @@ function Search() {
     <div id="search-container">
       <SearchForm handleSearchClick={handleSearchClick} getInputValue={getInputValue} />
       <div id="tweets">
-        {data.map(item =>
-          <DisplayTweets item={item} key={item.id} />)}
+        {tweets.map(tweet =>
+          <DisplayTweets tweet={tweet} key={tweet.id} />)}
       </div>
     </div>
   )

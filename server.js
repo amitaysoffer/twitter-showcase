@@ -68,8 +68,30 @@ app.get('/api/search', async (req, res) => {
     .then(function (response) {
       res.json(response.data);
     })
+    .catch(function (err) {
+      console.log('Something went wrong', err)
+      res.sendStatus(err.response.status)
+    })
 });
 
-
+// Random tweet
+app.get('/api/random', async (req, res) => {
+  const token = await getToken()
+  const queryString = req.query.string;
+  axios({
+    method: 'get',
+    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=1&result_type=mixed`,
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    },
+  })
+    .then(function (response) {
+      res.json(response.data);
+    })
+    .catch(function (err) {
+      console.log('Something went wrong', err)
+      res.sendStatus(err.response.status)
+    })
+});
 
 app.listen(port, () => `Server running on port ${port}`);

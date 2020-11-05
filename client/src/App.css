@@ -22,8 +22,6 @@ ul {
 a {
   color: rgb(119, 202, 230);
   text-decoration: none;
-  target-name: new;
-  target-new: tab;
 }
 
 h1, h2 {
