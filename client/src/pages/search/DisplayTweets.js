@@ -2,7 +2,6 @@ import React from 'react'
 var FontAwesome = require('react-fontawesome')
 
 export default function DisplayTweets(props) {
-  // debugger
   const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.tweet
   return (
     <div className="card">

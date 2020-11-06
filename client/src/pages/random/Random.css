@@ -1,6 +1,7 @@
 #random-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  padding: 0 20px;
 }
 .random-card {
   border: 1px red solid;
@@ -10,9 +11,23 @@
   padding: 30px;
 }
 
-#random-container {
-  /* display: flex;
-  flex-wrap: wrap; */
+#random-container .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#random-container .image-wrapper img {
+  width: 85%;
+  height: 85%;
+  border-radius: 10%;
+}
+.card {
+  background: #131A25;
+  padding: 5px;
+  margin: 10px 0;
+  color: #27C6DA;
+  cursor: pointer;
 }
 
 #random-container img {

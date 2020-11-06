@@ -4,11 +4,10 @@ import axios from 'axios'
 import DisplayRandomTweet from './DisplayRandomTweet'
 import DisplayShowcases from './DisplayShowcases'
 
-
 function Random() {
   const [showcases, setShowcases] = useState([])
   const [randomTweet, setRandomTweet] = useState([])
-  const showcaseList = ['PLComms', 'nba']
+  const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
 
   useEffect(() => {
     showcaseList.forEach(showcase => {
@@ -26,10 +25,10 @@ function Random() {
     })
   }, [])
 
-
   function handleRandomClick(e) {
     e.preventDefault()
-    const randomTweet = e.target.id
+    
+    const randomTweet = e.currentTarget.id
     axios({
       method: 'get',
       url: `api/random/?string=${randomTweet}`,

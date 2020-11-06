@@ -1,14 +1,8 @@
 import React from 'react'
 var FontAwesome = require('react-fontawesome')
 
-export default function DisplayRandomTweet(props) {
-  // debugger
-  // if (props.randomTweet[0]) {
+function DisplayRandomTweet(props) {
   const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.tweet
-  // } else {
-  // console.log('nothing yet')
-  // }
-
   return (
     <div className="card">
       <div className="image-wrapper">
@@ -63,3 +57,5 @@ export default function DisplayRandomTweet(props) {
     </div>
   )
 }
+
+export default DisplayRandomTweet
