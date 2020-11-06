@@ -14,7 +14,6 @@
 
 }
 #random-container .card.random-card {
-  background: #131A25;
   padding: 5px;
   color: #27C6DA;
   cursor: pointer;
@@ -24,7 +23,6 @@
 
 #random-container .card.showcase-card {
   padding: 10px;
-  background: #131A25;
   box-shadow: 0 8px 6px -6px white;
 }
 

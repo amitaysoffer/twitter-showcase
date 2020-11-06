@@ -41,6 +41,7 @@
   border: 1px solid #f2f2f2;
   border-radius: 15px;
   margin-bottom: 20px;
+  background-image: url('../../images/dark-bg.jpg');
 }
 
 .content-wrapper {
