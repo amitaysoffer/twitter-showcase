@@ -29,9 +29,8 @@ h1, h2 {
   font-weight: 300;
 }
 
-.current {
-  color: #fff;
-  font-size: 35px;
+.center {
+  text-align: center;
 }
 
 #grid-container {

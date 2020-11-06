@@ -7,7 +7,7 @@ export default function Home() {
     <div id="home-container">
       <div className="row">
         <img src={Bird} alt="bird" />
-        <div>
+        <div className="center">
           <h1 className="home-title">Twitter Showcase</h1>
           <Link to="/search" >
             <button className="btn">Click Here To Start</button>

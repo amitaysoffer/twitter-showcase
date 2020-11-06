@@ -27,7 +27,7 @@ function Random() {
 
   function handleRandomClick(e) {
     e.preventDefault()
-    
+
     const randomTweet = e.currentTarget.id
     axios({
       method: 'get',
