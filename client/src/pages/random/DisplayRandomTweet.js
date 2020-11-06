@@ -4,7 +4,7 @@ var FontAwesome = require('react-fontawesome')
 function DisplayRandomTweet(props) {
   const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.tweet
   return (
-    <div className="card">
+    <div className="card random-card">
       <div className="image-wrapper">
         <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank">
           <img

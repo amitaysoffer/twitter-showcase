@@ -1,40 +1,33 @@
 #random-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 0 20px;
-}
-.random-card {
-  border: 1px red solid;
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  padding: 30px;
+  align-items: center;
+
 }
 
 #random-container .image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 10px;
 }
 
 #random-container .image-wrapper img {
-  width: 85%;
-  height: 85%;
-  border-radius: 10%;
+
 }
-.card {
+#random-container .card.random-card {
   background: #131A25;
   padding: 5px;
-  margin: 10px 0;
   color: #27C6DA;
   cursor: pointer;
+  margin: 10px 20px;
+  box-shadow: 0 8px 6px -6px white;
+}
+
+#random-container .card.showcase-card {
+  padding: 10px;
+  background: #131A25;
+  box-shadow: 0 8px 6px -6px white;
 }
 
 #random-container img {
   width: 100%;
-  height: 100%;
-}
-
-#random-container > div {
-
 }

@@ -4,7 +4,7 @@ function DisplayShowcases(props) {
   const { user } = props.showcase
 
   return (
-    <div className="card" onClick={props.handleRandomClick} id={user.screen_name}>
+    <div className="card showcase-card" onClick={props.handleRandomClick} id={user.screen_name}>
       <div className="image-wrapper">
         <img src={user.profile_image_url} alt="profileImage" />
       </div>
