@@ -12,9 +12,9 @@ function Search() {
     setInputValue(e.target.value)
   }
 
-  useEffect(() => {
-    console.log(tweets)
-  }, [tweets])
+  // useEffect(() => {
+  //   console.log(tweets)
+  // }, [tweets])
 
   function handleSearchClick(e) {
     e.preventDefault()

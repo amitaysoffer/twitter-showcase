@@ -90,6 +90,13 @@
 .text {
   margin: 5px 0px 10px 0;
 }
+
+.tweet-img {
+  width: auto;
+  height: 300px;
+  max-height: 300px;
+  border-radius: 20px;
+}
 /* Mobile */
 @media(max-width: 1000px) {
   #search-container {
