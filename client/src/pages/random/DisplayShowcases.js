@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DisplayShowcases(props) {
+function DisplayShowcases(props) {
   const { user } = props.showcase
 
   return (
@@ -25,3 +25,5 @@ export default function DisplayShowcases(props) {
     </div>
   )
 }
+
+export default DisplayShowcases
