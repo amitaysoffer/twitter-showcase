@@ -79,6 +79,8 @@ app.get('/api/random', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
   const queryCount = req.query.count;
+  const randomNum = Math.floor(Math.random() * 20);
+
   axios({
     method: 'get',
     url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=${queryCount}&result_type=mixed`,

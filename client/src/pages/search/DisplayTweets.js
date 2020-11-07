@@ -8,7 +8,7 @@ export default function DisplayTweets(props) {
       <div className="image-wrapper">
         <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank" rel="noopener noreferrer">
           <img
-            src={user.profile_image_url}
+            src={user.profile_image_url.replace('normal', '400x400')}
             alt="profileImage" />
         </a>
       </div>
@@ -36,7 +36,7 @@ export default function DisplayTweets(props) {
               src={entities.media ? entities.media[0].media_url : null}
               height={entities.media ? entities.media[0].sizes.small.h : null}
               width={entities.media ? entities.media[0].sizes.small.w : null}
-              alt="tweet-link"
+              alt=""
             />
           </a>
         </div>
