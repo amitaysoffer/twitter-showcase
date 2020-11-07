@@ -3,16 +3,12 @@
   grid-template-columns: 1fr 1fr;
   padding: 0 20px;
   align-items: center;
-
 }
 
 #random-container .image-wrapper {
   margin-right: 10px;
 }
 
-#random-container .image-wrapper img {
-
-}
 #random-container .card.random-card {
   padding: 5px;
   color: #27C6DA;
@@ -24,8 +20,14 @@
 #random-container .card.showcase-card {
   padding: 10px;
   box-shadow: 0 8px 6px -6px white;
+  cursor: pointer;
+}
+
+.showcase-card:hover {
+  color: #27C6DA;
 }
 
 #random-container img {
   width: 100%;
 }
+
