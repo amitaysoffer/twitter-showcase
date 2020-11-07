@@ -89,6 +89,7 @@
 .tweet-img {
   width: auto;
   max-height: 300px;
+  max-width: 325px;
   border-radius: 20px;
 }
 /* Mobile */
