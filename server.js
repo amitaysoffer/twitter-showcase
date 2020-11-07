@@ -77,13 +77,37 @@ app.get('/api/search', async (req, res) => {
 // Random tweet
 app.get('/api/random', async (req, res) => {
   const token = await getToken()
+  // const queryCount = req.query.count;
+  
   const queryString = req.query.string;
-  const queryCount = req.query.count;
-  const randomNum = Math.floor(Math.random() * 20);
+  
+  axios({
+    method: 'get',
+    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=20&result_type=mixed`,
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    },
+  })
+  .then(function (response) {
+    const randomNum = Math.floor(Math.random() * 20);
+    res.json(response.data[randomNum]);
+  })
+    .catch(function (err) {
+      console.log('Something went wrong', err)
+      res.sendStatus(err.response.status)
+    })
+});
+
+// Showcase tweets
+app.get('/api/showcases', async (req, res) => {
+  const token = await getToken()
+
+  const queryString = req.query.string.split(',');
+  // const queryCount = req.query.count;
 
   axios({
     method: 'get',
-    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=${queryCount}&result_type=mixed`,
+    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=1&result_type=mixed`,
     headers: {
       "Authorization": `Bearer ${token}`,
     },

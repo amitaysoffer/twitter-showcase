@@ -3,7 +3,7 @@ var FontAwesome = require('react-fontawesome')
 
 function DisplayRandomTweet(props) {
   const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.tweet
-
+  debugger
   return (
     <div className="card random-card">
       <div className="image-wrapper">

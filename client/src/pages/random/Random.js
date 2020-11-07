@@ -7,35 +7,37 @@ import DisplayShowcases from './DisplayShowcases'
 function Random() {
   const [showcases, setShowcases] = useState([])
   const [randomTweet, setRandomTweet] = useState([])
-  const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
+  // const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
 
   // Showcase Tweets
   useEffect(() => {
-    showcaseList.forEach(showcase => {
-      axios({
-        method: 'get',
-        url: `api/random/?string=${showcase}&count=1`,
-      })
-        .then(res => {
-          setShowcases(showcases => showcases.concat(res.data));
-        })
-        .catch(err => {
-          alert('There is no user under that name')
-          console.log('error client side', err)
-        })
+    // showcaseList.forEach(showcase => {
+    axios({
+      method: 'get',
+      url: `api/showcases/?string=PLComms`,
     })
+      .then(res => {
+        setShowcases(showcases => showcases.concat(res.data));
+      })
+      .catch(err => {
+        alert('There is no user under that name')
+        console.log('error client side', err)
+      })
+    // })
   }, [])
 
   // Random Tweet
   function handleRandomClick(e) {
     e.preventDefault()
 
-    const randomTweet = e.currentTarget.id
+    const getRandomTweet = e.currentTarget.id
+
     axios({
       method: 'get',
-      url: `api/random/?string=${randomTweet}&count=20`,
+      url: `api/random/?string=${getRandomTweet}`,
     })
       .then(res => {
+        // debugger
         setRandomTweet(res.data)
       })
       .catch(err => {
@@ -44,9 +46,13 @@ function Random() {
       })
   }
 
-  const randomNum = Math.floor(Math.random() * 20);
+  // const randomNum = Math.floor(Math.random() * 20);
+  // console.log(randomTweet)
+  // console.log(randomTweet[randomNum])
+
+  console.log(showcases)
   console.log(randomTweet)
-  console.log(randomTweet[randomNum])
+  console.log(randomTweet.length)
 
   return (
     <div id="random-container">
@@ -58,13 +64,20 @@ function Random() {
             handleRandomClick={handleRandomClick}
           />)}
       </div>
-      { randomTweet[randomNum] ?
-        <DisplayRandomTweet
-          tweet={randomTweet[randomNum]}
-          key={randomTweet[randomNum]}
-        />
-        : null
+      {
+        // randomTweet.map(tweet =>
+        !randomTweet ?
+          <DisplayRandomTweet
+            tweet={randomTweet}
+            key={randomTweet.id}
+          /> :
+          null
+        // )
       }
+
+
+      {/* )} */}
+
     </div>
   )
 }
