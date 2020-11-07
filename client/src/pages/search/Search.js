@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SearchForm from './SearchForm'
 import DisplayTweets from './DisplayTweets'
 import './Search.css';

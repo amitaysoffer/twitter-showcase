@@ -10,7 +10,7 @@ export default function Home() {
         <div className="center">
           <h1 className="home-title">Twitter Showcase</h1>
           <Link to="/search" >
-            <button className="btn">Click Here To Start</button>
+            <button className="btn">Search Tweets !</button>
           </Link>
         </div>
       </div>

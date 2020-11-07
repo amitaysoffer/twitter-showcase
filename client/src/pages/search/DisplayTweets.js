@@ -6,7 +6,7 @@ export default function DisplayTweets(props) {
   return (
     <div className="card">
       <div className="image-wrapper">
-        <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank">
+        <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank" rel="noopener noreferrer">
           <img
             src={user.profile_image_url}
             alt="profileImage" />
@@ -30,12 +30,13 @@ export default function DisplayTweets(props) {
           <span>{full_text.substring(props.tweet.display_text_range[0], props.tweet.display_text_range[1] + 1)}</span>
         </div>
         <div className="link">
-          <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank">
+          <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank" rel="noopener noreferrer">
             <img
               className="tweet-img"
               src={entities.media ? entities.media[0].media_url : null}
               height={entities.media ? entities.media[0].sizes.small.h : null}
               width={entities.media ? entities.media[0].sizes.small.w : null}
+              alt="tweet-link"
             />
           </a>
         </div>

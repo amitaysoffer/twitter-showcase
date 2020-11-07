@@ -9,6 +9,7 @@ function Random() {
   const [randomTweet, setRandomTweet] = useState([])
   const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
 
+  // Showcase Tweets
   useEffect(() => {
     showcaseList.forEach(showcase => {
       axios({
@@ -25,6 +26,7 @@ function Random() {
     })
   }, [])
 
+  // Random Tweet
   function handleRandomClick(e) {
     e.preventDefault()
 
@@ -42,9 +44,9 @@ function Random() {
       })
   }
 
-  console.log(showcases)
-  console.log(randomTweet[3])
   const randomNum = Math.floor(Math.random() * 20);
+  console.log(randomTweet)
+  console.log(randomTweet[randomNum])
 
   return (
     <div id="random-container">

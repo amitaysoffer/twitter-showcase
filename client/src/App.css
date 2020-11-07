@@ -90,6 +90,7 @@ nav li:hover {
 }
 
 /* Home */
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 #home-container {
   width: 75%;
   margin: 40px auto;
@@ -108,4 +109,8 @@ nav li:hover {
   width: 70%;
   margin: 50px auto;
   text-align: center;
+}
+
+.home-title {
+  font-family: 'Lemon', cursive;
 }
