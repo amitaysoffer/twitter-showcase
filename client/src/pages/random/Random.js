@@ -13,7 +13,7 @@ function Random() {
     showcaseList.forEach(showcase => {
       axios({
         method: 'get',
-        url: `api/random/?string=${showcase}`,
+        url: `api/random/?string=${showcase}&count=1`,
       })
         .then(res => {
           setShowcases(showcases => showcases.concat(res.data));
@@ -31,7 +31,7 @@ function Random() {
     const randomTweet = e.currentTarget.id
     axios({
       method: 'get',
-      url: `api/random/?string=${randomTweet}`,
+      url: `api/random/?string=${randomTweet}&count=20`,
     })
       .then(res => {
         setRandomTweet(res.data)
@@ -41,6 +41,10 @@ function Random() {
         console.log('error client side', err)
       })
   }
+
+  console.log(showcases)
+  console.log(randomTweet[3])
+  const randomNum = Math.floor(Math.random() * 20);
 
   return (
     <div id="random-container">
@@ -52,14 +56,13 @@ function Random() {
             handleRandomClick={handleRandomClick}
           />)}
       </div>
-
-      {randomTweet.map(tweet =>
+      { randomTweet[randomNum] ?
         <DisplayRandomTweet
-          tweet={tweet}
-          key={tweet.id}
+          tweet={randomTweet[randomNum]}
+          key={randomTweet[randomNum]}
         />
-      )}
-
+        : null
+      }
     </div>
   )
 }

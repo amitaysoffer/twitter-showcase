@@ -16,11 +16,6 @@
   width: 80%;
   margin: 0 auto;
 }
-/* 
-.btn-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-} */
 
 .btn {
   cursor: pointer;
@@ -31,7 +26,6 @@
   border-radius: 10px;
   margin: 15px 0px;
   font-size: 20px;
-  width: 50%;
 }
 
 /* card */
@@ -92,7 +86,7 @@
   margin: 5px 0px 10px 0;
 }
 
-#search-container .tweet-img {
+.tweet-img {
   width: auto;
   max-height: 300px;
   border-radius: 20px;

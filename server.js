@@ -78,9 +78,10 @@ app.get('/api/search', async (req, res) => {
 app.get('/api/random', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
+  const queryCount = req.query.count;
   axios({
     method: 'get',
-    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=1&result_type=mixed`,
+    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=${queryCount}&result_type=mixed`,
     headers: {
       "Authorization": `Bearer ${token}`,
     },

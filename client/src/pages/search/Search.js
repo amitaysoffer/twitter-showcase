@@ -21,12 +21,9 @@ function Search() {
         url: `api/username/?string=${inputValue}`,
       })
         .then(res => {
-          // debugger
-          console.log(res.data);
           setTweets(res.data)
         })
         .catch(err => {
-          // debugger
           alert('There is no user under that name')
           console.log('error client side', err)
         })
@@ -36,7 +33,6 @@ function Search() {
         url: `api/search/?string=${inputValue}`,
       })
         .then(res => {
-          console.log(res.data);
           setTweets(res.data.statuses)
         }).catch(err => {
           alert('There is no content as such')
