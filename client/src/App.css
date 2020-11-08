@@ -66,6 +66,23 @@ nav li:hover {
   color: #fff;
 }
 
+.current {
+  color: #fff;
+  font-size: 1.6em;
+}
+
+/* Mobile */
+@media(max-width: 499px) {
+  #navbar-container {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+}
+
 /* Footer */
 #footer-container {
   background: #141d26;
@@ -113,4 +130,31 @@ nav li:hover {
 
 .home-title {
   font-family: 'Lemon', cursive;
+}
+
+/* Mobile */
+@media(max-width: 499px) {
+  .row {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .row img {
+    width: 50%;
+  }
+
+  .home-title {
+    font-size: 50px;
+  }
+
+  #home-container {
+    width: 100%;
+    margin: 0;
+  }
+  .app-description {
+    width: 100%;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 25px;
+  }
 }

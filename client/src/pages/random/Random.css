@@ -31,3 +31,35 @@
   width: 100%;
 }
 
+@media(max-width: 499px) {
+  #random-container {
+    display: block;
+    padding: 10px;
+  }
+  #random-container 
+   .description,
+   .followers, 
+   .user span:first-child {
+    display: none;
+  }
+
+  #random-container .image-wrapper {
+    margin: auto;
+  }
+  #random-container img {
+    width: 50%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+
+  .content-wrapper {
+    margin: auto;
+  }
+}
+
+

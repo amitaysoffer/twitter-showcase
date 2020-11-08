@@ -103,3 +103,24 @@
     width: 50%;
   }
 }
+
+@media(max-width: 499px) {
+  #search-container {
+    display: block;
+    padding: 10px;
+  }
+  #search-container form {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+  .image-wrapper {
+    width: 50%;
+    margin: 10px auto;
+  }
+}

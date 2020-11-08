@@ -41,6 +41,8 @@ function Search() {
     }
   }
 
+  console.log(tweets)
+  
   return (
     <div id="search-container">
       <SearchForm handleSearchClick={handleSearchClick} getInputValue={getInputValue} />
