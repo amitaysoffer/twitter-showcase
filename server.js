@@ -103,24 +103,33 @@ app.get('/api/showcases', async (req, res) => {
   const token = await getToken()
 
   const queryString = req.query.string.split(',');
-  console.log(queryString)
+  // console.log(queryString)
   // const queryCount = req.query.count;
-  queryString.forEach(query => {
-    axios({
+  // queryString.forEach(query => {
+  let randomTweet = []
+
+  for (const username of queryString) {
+    const response = await axios({
       method: 'get',
-      url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${query}&tweet_mode=extended&count=1&result_type=mixed`,
+      url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${username}&tweet_mode=extended&count=1&result_type=mixed`,
       headers: {
         "Authorization": `Bearer ${token}`,
       },
     })
-      .then(function (response) {
-        res.json(response.data);
-      })
-      .catch(function (err) {
-        console.log('Something went wrong', err)
-        res.sendStatus(err.response.status)
-      })
-  })
+    // .then(function (response) {
+      randomTweet.push(response.data);
+    //   console.log(randomTweet)
+    // res.json(response.data);
+    // })
+    // .catch(function (err) {
+    //   console.log('Something went wrong', err)
+    //   res.sendStatus(err.response.status)
+    // })
+    // })
+  }
+  console.log(randomTweet)
+  res.json(randomTweet)
+
 });
 
 

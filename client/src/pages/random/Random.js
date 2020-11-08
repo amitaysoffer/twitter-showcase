@@ -17,8 +17,9 @@ function Random() {
       url: `api/showcases/?string=PLComms,nba`,
     })
       .then(res => {
-        debugger
-        setShowcases(showcases => showcases.concat(res.data));
+        // debugger
+        // setShowcases(showcases => showcases.concat(res.data));
+        setShowcases(res.data);
       })
       .catch(err => {
         alert('There is no user under that name')
@@ -70,6 +71,8 @@ function Random() {
       // />
 
   )
+
+  console.log(showcases)
 
   return (
     <div id="random-container">

@@ -1,6 +1,7 @@
 import React from 'react'
 
 function DisplayShowcases(props) {
+  debugger
   const { user } = props.showcase
 
   return (
