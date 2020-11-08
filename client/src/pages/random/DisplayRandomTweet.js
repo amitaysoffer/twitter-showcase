@@ -2,13 +2,13 @@ import React from 'react'
 var FontAwesome = require('react-fontawesome')
 
 function DisplayRandomTweet(props) {
-  const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.tweet
-  debugger
+  // debugger
+  const { full_text, user, created_at, favorite_count, retweet_count, entities } = props
   return (
     <div className="card random-card">
       <div className="image-wrapper">
         <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank" rel="noopener noreferrer">
-          <img
+          <img 
             src={user.profile_image_url.replace('normal', '400x400')}
             alt="profileImage" />
         </a>

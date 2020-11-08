@@ -78,9 +78,9 @@ app.get('/api/search', async (req, res) => {
 app.get('/api/random', async (req, res) => {
   const token = await getToken()
   // const queryCount = req.query.count;
-  
+
   const queryString = req.query.string;
-  
+
   axios({
     method: 'get',
     url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=20&result_type=mixed`,
@@ -88,10 +88,10 @@ app.get('/api/random', async (req, res) => {
       "Authorization": `Bearer ${token}`,
     },
   })
-  .then(function (response) {
-    const randomNum = Math.floor(Math.random() * 20);
-    res.json(response.data[randomNum]);
-  })
+    .then(function (response) {
+      const randomNum = Math.floor(Math.random() * 20);
+      res.json(response.data[randomNum]);
+    })
     .catch(function (err) {
       console.log('Something went wrong', err)
       res.sendStatus(err.response.status)
@@ -103,22 +103,25 @@ app.get('/api/showcases', async (req, res) => {
   const token = await getToken()
 
   const queryString = req.query.string.split(',');
+  console.log(queryString)
   // const queryCount = req.query.count;
-
-  axios({
-    method: 'get',
-    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=1&result_type=mixed`,
-    headers: {
-      "Authorization": `Bearer ${token}`,
-    },
+  queryString.forEach(query => {
+    axios({
+      method: 'get',
+      url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${query}&tweet_mode=extended&count=1&result_type=mixed`,
+      headers: {
+        "Authorization": `Bearer ${token}`,
+      },
+    })
+      .then(function (response) {
+        res.json(response.data);
+      })
+      .catch(function (err) {
+        console.log('Something went wrong', err)
+        res.sendStatus(err.response.status)
+      })
   })
-    .then(function (response) {
-      res.json(response.data);
-    })
-    .catch(function (err) {
-      console.log('Something went wrong', err)
-      res.sendStatus(err.response.status)
-    })
 });
+
 
 app.listen(port, () => `Server running on port ${port}`);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Random.css'
 import axios from 'axios'
-import DisplayRandomTweet from './DisplayRandomTweet'
+// import DisplayRandomTweet from './DisplayRandomTweet'
 import DisplayShowcases from './DisplayShowcases'
 
 function Random() {
@@ -14,9 +14,10 @@ function Random() {
     // showcaseList.forEach(showcase => {
     axios({
       method: 'get',
-      url: `api/showcases/?string=PLComms`,
+      url: `api/showcases/?string=PLComms,nba`,
     })
       .then(res => {
+        debugger
         setShowcases(showcases => showcases.concat(res.data));
       })
       .catch(err => {
@@ -50,9 +51,25 @@ function Random() {
   // console.log(randomTweet)
   // console.log(randomTweet[randomNum])
 
-  console.log(showcases)
-  console.log(randomTweet)
-  console.log(randomTweet.length)
+  // console.log(showcases)
+  // console.log(randomTweet)
+  // console.log(randomTweet.length)
+
+  const randomTweetsArray = [{ ...randomTweet }];
+  const randomTweets = randomTweetsArray.map(
+    tweet => console.log(tweet)
+      // <DisplayRandomTweet
+        // tweet={tweet}
+        // key={tweet.id}
+        // full_text={tweet.full_text}
+        // user={tweet.user}
+        // created_at={tweet.created_at}
+        // favorite_count={tweet.favorite_count}
+        // retweet_count={tweet.retweet_count}
+        // entities={tweet.entities}
+      // />
+
+  )
 
   return (
     <div id="random-container">
@@ -64,19 +81,7 @@ function Random() {
             handleRandomClick={handleRandomClick}
           />)}
       </div>
-      {
-        // randomTweet.map(tweet =>
-        !randomTweet ?
-          <DisplayRandomTweet
-            tweet={randomTweet}
-            key={randomTweet.id}
-          /> :
-          null
-        // )
-      }
-
-
-      {/* )} */}
+      {/* {randomTweets} */}
 
     </div>
   )
