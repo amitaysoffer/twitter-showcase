@@ -6,24 +6,22 @@ import DisplayShowcases from './DisplayShowcases'
 
 function Random() {
   const [showcases, setShowcases] = useState([])
-  const [randomTweet, setRandomTweet] = useState([])
+  const [randomTweet, setRandomTweet] = useState(null)
   const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
 
   // Showcase Tweets
   useEffect(() => {
-    showcaseList.forEach(showcase => {
-      axios({
-        method: 'get',
-        url: `api/random/?string=${showcase}&count=1`,
-      })
-        .then(res => {
-          setShowcases(showcases => showcases.concat(res.data));
-        })
-        .catch(err => {
-          alert('There is no user under that name')
-          console.log('error client side', err)
-        })
+    axios({
+      method: 'get',
+      url: `api/showcases/?string=${showcaseList.toString()}`,
     })
+      .then(res => {
+        setShowcases(res.data)
+      })
+      .catch(err => {
+        alert('There is no user under that name')
+        console.log('error client side', err)
+      })
   }, [])
 
   // Random Tweet
@@ -44,10 +42,6 @@ function Random() {
       })
   }
 
-  const randomNum = Math.floor(Math.random() * 20);
-  console.log(randomTweet)
-  console.log(randomTweet[randomNum])
-
   return (
     <div id="random-container">
       <div id="showcase-list">
@@ -58,13 +52,7 @@ function Random() {
             handleRandomClick={handleRandomClick}
           />)}
       </div>
-      { randomTweet[randomNum] ?
-        <DisplayRandomTweet
-          tweet={randomTweet[randomNum]}
-          key={randomTweet[randomNum]}
-        />
-        : null
-      }
+      {randomTweet ? <DisplayRandomTweet randomTweet={randomTweet} /> : null}
     </div>
   )
 }

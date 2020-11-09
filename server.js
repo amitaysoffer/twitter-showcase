@@ -1,9 +1,5 @@
 const express = require('express');
 const axios = require('axios');
-
-// import tweets dummy data
-// const data = require('./twitterData');
-// const { response } = require('express');
 const app = express();
 const port = 5000;
 
@@ -20,12 +16,11 @@ let getToken = () => {
       },
       // npm install dotenv
     };
-    bearer = axios
-      .post(
-        "https://api.twitter.com/oauth2/token",
-        "grant_type=client_credentials",
-        config
-      )
+    bearer = axios.post(
+      "https://api.twitter.com/oauth2/token",
+      "grant_type=client_credentials",
+      config
+    )
       .then((response) => {
         console.log(response.data.access_token);
         return response.data.access_token;
@@ -39,9 +34,7 @@ let getToken = () => {
 app.get('/api/username', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
-  axios({
-    method: 'get',
-    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=5&result_type=popular`,
+  axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=5&result_type=popular`, {
     headers: {
       "Authorization": `Bearer ${token}`,
     },
@@ -58,9 +51,8 @@ app.get('/api/username', async (req, res) => {
 app.get('/api/search', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
-  axios({
-    method: 'get',
-    url: `https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&tweet_mode=extended&count=5&result_type=popular`,
+
+  axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&tweet_mode=extended&count=5&result_type=popular`, {
     headers: {
       "Authorization": `Bearer ${token}`,
     },
@@ -78,23 +70,37 @@ app.get('/api/search', async (req, res) => {
 app.get('/api/random', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
-  const queryCount = req.query.count;
-  const randomNum = Math.floor(Math.random() * 20);
 
-  axios({
-    method: 'get',
-    url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=${queryCount}&result_type=mixed`,
+  axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=20&result_type=mixed`, {
     headers: {
       "Authorization": `Bearer ${token}`,
     },
   })
     .then(function (response) {
-      res.json(response.data);
+      const randomNum = Math.floor(Math.random() * 20);
+      res.json(response.data[randomNum]);
     })
     .catch(function (err) {
       console.log('Something went wrong', err)
       res.sendStatus(err.response.status)
     })
+});
+
+// Showcase tweets
+app.get('/api/showcases', async (req, res) => {
+  const token = await getToken()
+  const usernames = req.query.string.split(',');
+  const randomTweet = [];
+
+  for (const username of usernames) {
+    const response = await axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${username}&tweet_mode=extended&count=1&result_type=mixed`, {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+      },
+    })
+    randomTweet.push(response.data[0]);
+  }
+  res.json(randomTweet)
 });
 
 app.listen(port, () => `Server running on port ${port}`);

@@ -2,7 +2,7 @@ import React from 'react'
 var FontAwesome = require('react-fontawesome')
 
 function DisplayRandomTweet(props) {
-  const { full_text, user, created_at, favorite_count, retweet_count, entities, display_text_range } = props.tweet
+  const { full_text, user, created_at, favorite_count, retweet_count, entities, display_text_range } = props.randomTweet
 
   return (
     <div className="card random-card">
@@ -28,7 +28,7 @@ function DisplayRandomTweet(props) {
           </div>
         </div>
         <div className="text">
-          <span>{full_text.substring(props.tweet.display_text_range[0], props.tweet.display_text_range[1] + 1)}</span>
+          <span>{full_text.substring(props.randomTweet.display_text_range[0], props.randomTweet.display_text_range[1] + 1)}</span>
         </div>
         <div className="link">
           <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank" rel="noopener noreferrer">
