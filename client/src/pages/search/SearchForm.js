@@ -9,10 +9,11 @@ export default function SearchForm(props) {
         type="text"
         onChange={props.getInputValue}
         value={props.inputValue}
+        placeholder="Enter search tweet" name="fname" autoFocus
       />
       <div className="btn-wrapper center">
-        <button onClick={props.handleSearchClick} className="btn" id="username" >Search by username</button>
-        <button onClick={props.handleSearchClick} className="btn" id="content">Search by content</button>
+        <button onClick={props.handleSearchClick} className="btn" id="username" >Username</button>
+        <button onClick={props.handleSearchClick} className="btn" id="content">Content</button>
       </div>
       {
         props.inputSelected ?

@@ -35,12 +35,12 @@ function Search() {
             renderInputMessage(inputValue, 'success')
             setTweets(res.data.statuses)
           } else if (inputValue) {
-            renderInputMessage('Could not find any results.', 'failure')
+            renderInputMessage('No tweets with that content', 'warning')
           } else {
           }
         }).catch(err => {
           !inputValue ?
-            renderInputMessage('Cant have empty search', 'failure') :
+            renderInputMessage('Cant have an empty search', 'error') :
             console.log('error client side', err)
         })
     }

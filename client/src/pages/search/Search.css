@@ -9,23 +9,30 @@
 #search-container input {
   padding: 10px;
   width: 100%;
-  font-size: 20px;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #03a8f45e;
+  font-size: 1.4rem;
+  color: #fff;
+  background: #243447;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 #search-container form {
-  width: 80%;
   margin: 0 auto;
 }
 
 .btn {
   cursor: pointer;
   padding: 10px 30px;
-  background-color: #000;
   color: #fff;
   border: none;
   border-radius: 10px;
-  margin: 15px auto;
+  margin: 8px 15px;
   font-size: 20px;
+  background: #5d83b0;
+
 }
 
 /* card */
@@ -94,12 +101,31 @@
   border-radius: 20px;
 }
 
-.failure {
-  color: red;
+.error, .warning, .success {
+  margin: 10px auto;
+  text-align: center;
+  padding: 2px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: monospace;
+  border-radius: 15px;
+}
+
+.error {
+  color: #d8000c;
+  background-color: #ecacac;
+
 }
 
 .success {
-  color: blue;
+  color: #4f8a10;
+  background-color: #dff2bf;
+  text-transform: uppercase;
+}
+
+.warning {
+  color: #9f6000;
+  background-color: #feefb3;
 }
 
 /* Mobile */
@@ -113,7 +139,7 @@
   }
 }
 
-@media(max-width: 499px) {
+@media(max-width: 650px) {
   #search-container {
     display: block;
     padding: 10px;
