@@ -32,8 +32,9 @@ let getToken = () => {
 
 app.get('/api/username', async (req, res) => {
   const token = await getToken()
-  const queryString = req.query.string;
-  axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${queryString}&tweet_mode=extended&count=5&result_type=popular`, {
+  const username = req.query.string;
+
+  axios.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${username}&tweet_mode=extended&count=5&result_type=popular`, {
     headers: {
       "Authorization": `Bearer ${token}`,
     },
@@ -47,11 +48,12 @@ app.get('/api/username', async (req, res) => {
     })
 });
 
-app.get('/api/search', async (req, res) => {
+// Search by content
+app.get('/api/content', async (req, res) => {
   const token = await getToken()
-  const queryString = req.query.string;
+  const content = req.query.string;
 
-  axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${queryString}&tweet_mode=extended&count=5&result_type=popular`, {
+  axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${content}&tweet_mode=extended&count=5&result_type=popular`, {
     headers: {
       "Authorization": `Bearer ${token}`,
     },

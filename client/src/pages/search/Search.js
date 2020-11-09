@@ -5,8 +5,10 @@ import './Search.css';
 import axios from 'axios';
 
 function Search() {
-  const [inputValue, setInputValue] = useState()
+  const [inputValue, setInputValue] = useState('')
   const [tweets, setTweets] = useState([])
+  const [inputSelected, setInputSelected] = useState()
+  const [messageStyle, setMessageStyle] = useState()
 
   function getInputValue(e) {
     setInputValue(e.target.value)
@@ -16,9 +18,7 @@ function Search() {
     e.preventDefault()
 
     if (e.target.id === 'username') {
-      axios({
-        method: 'get',
-        url: `api/username/?string=${inputValue}`,
+      axios.get(`api/username/?string=${inputValue}`, {
       })
         .then(res => {
           setTweets(res.data)
@@ -28,17 +28,28 @@ function Search() {
           console.log('error client side', err)
         })
     } else {
-      axios({
-        method: 'get',
-        url: `api/search/?string=${inputValue}`,
+      axios.get(`api/content/?string=${inputValue}`, {
       })
         .then(res => {
-          setTweets(res.data.statuses)
+          if (inputValue && res.data.statuses.length > 0) {
+            renderInputMessage(inputValue, 'success')
+            setTweets(res.data.statuses)
+          } else if (inputValue) {
+            renderInputMessage('Could not find any results.', 'failure')
+          } else {
+          }
         }).catch(err => {
-          alert('There is no content as such')
-          console.log('error client side', err)
+          !inputValue ?
+            renderInputMessage('Cant have empty search', 'failure') :
+            console.log('error client side', err)
         })
     }
+    setInputValue('')
+  }
+
+  function renderInputMessage(message, messageStatus) {
+    setInputSelected(message)
+    setMessageStyle(messageStatus)
   }
 
   return (
@@ -47,6 +58,8 @@ function Search() {
         handleSearchClick={handleSearchClick}
         getInputValue={getInputValue}
         inputValue={inputValue}
+        inputSelected={inputSelected}
+        messageStyle={messageStyle}
       />
       <div id="tweets">
         {tweets.map(tweet =>

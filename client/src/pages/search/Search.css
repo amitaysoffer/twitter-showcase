@@ -93,6 +93,15 @@
   max-width: 325px;
   border-radius: 20px;
 }
+
+.failure {
+  color: red;
+}
+
+.success {
+  color: blue;
+}
+
 /* Mobile */
 @media(max-width: 1000px) {
   #search-container {
@@ -124,3 +133,4 @@
     margin: 10px auto;
   }
 }
+
