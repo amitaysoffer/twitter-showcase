@@ -41,14 +41,12 @@ function Search() {
     }
   }
 
-  console.log(tweets)
-
   return (
     <div id="search-container">
-      <SearchForm 
-      handleSearchClick={handleSearchClick} 
-      getInputValue={getInputValue}
-      inputValue={inputValue}
+      <SearchForm
+        handleSearchClick={handleSearchClick}
+        getInputValue={getInputValue}
+        inputValue={inputValue}
       />
       <div id="tweets">
         {tweets.map(tweet =>

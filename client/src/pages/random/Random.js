@@ -7,10 +7,10 @@ import DisplayShowcases from './DisplayShowcases'
 function Random() {
   const [showcases, setShowcases] = useState([])
   const [randomTweet, setRandomTweet] = useState(null)
-  const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
 
   // Showcase Tweets
   useEffect(() => {
+    const showcaseList = ['PLComms', 'nba', 'theofficetv', 'traversymedia', 'freeCodeCamp'];
     axios({
       method: 'get',
       url: `api/showcases/?string=${showcaseList.toString()}`,

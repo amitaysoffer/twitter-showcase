@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+require('dotenv').config();
 const app = express();
 const port = 5000;
 
@@ -11,10 +12,9 @@ let getToken = () => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       auth: {
-        username: "sbZZacfAEvxKVykuX4UhiqM06",
-        password: "MSbwMMURuNpV3awcQzoGykYKDyksnNLooCNrWldDfYDgepdNLE",
+        username: process.env.API_KEY,
+        password: process.env.API_SECRET_KEY,
       },
-      // npm install dotenv
     };
     bearer = axios.post(
       "https://api.twitter.com/oauth2/token",
@@ -29,7 +29,6 @@ let getToken = () => {
   }
   return bearer;
 };
-
 
 app.get('/api/username', async (req, res) => {
   const token = await getToken()
