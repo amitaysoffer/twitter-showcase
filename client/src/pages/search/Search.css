@@ -139,6 +139,12 @@
   }
 }
 
+@media(max-width: 850px) {
+  #search-container .image-wrapper img {
+    width: 10%;
+  }
+}
+
 @media(max-width: 650px) {
   #search-container {
     display: block;
@@ -154,8 +160,12 @@
     grid-template-columns: 1fr;
     padding: 5px;
   }
-  .image-wrapper {
+  /* .image-wrapper {
     width: 50%;
+    margin: 10px auto;
+  } */
+  #search-container .image-wrapper img {
+    width: 20%;
     margin: 10px auto;
   }
 }

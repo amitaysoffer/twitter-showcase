@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <div className="app-description">
         <p>This app allows you to retreive tweets from your favourite people without having an account on twitter.
-        Don't have a person in your mind ? Go to our random section to inspire you! It presents people and organizations I personally like.</p>
+        Don't have a person in your mind ? Go to our random section and click on one of showcases. Each click you will get a random tweet from that spesific showcase.</p>
       </div>
     </div>
   )
