@@ -78,6 +78,10 @@ nav li:hover {
     padding: 5px;
   }
 
+  #showcase-list {
+    /* display: block; */
+  }
+
   .nav-links {
     flex-direction: column;
   }

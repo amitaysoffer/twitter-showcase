@@ -1,12 +1,26 @@
 #random-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 0 20px;
-  align-items: center;
+}
+
+#showcase-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#random-container .card {
+  display: block;
+  text-align: center;
+  margin: 10px;
 }
 
 #random-container .image-wrapper {
-  margin-right: 10px;
+     width: 80px;
+     margin: auto;
+}
+
+#random-container .content-wrapper {
+  text-align: center;
 }
 
 #random-container .card.random-card {
@@ -18,9 +32,10 @@
 }
 
 #random-container .card.showcase-card {
-  padding: 10px;
+  padding-top: 10px;
   box-shadow: 0 8px 6px -6px white;
   cursor: pointer;
+  width: 250px;
 }
 
 .showcase-card:hover {
@@ -31,11 +46,19 @@
   width: 100%;
 }
 
-@media(max-width: 499px) {
+@media(max-width: 1000px) {
+  /* #showcase-list {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+}
+
+@media(max-width: 825px) {
   #random-container {
-    display: block;
+  
     padding: 10px;
   }
+
   #random-container 
    .description,
    .followers, 
@@ -48,6 +71,7 @@
   }
   #random-container img {
     width: 50%;
+    max-width: 170px;
   }
   .btn {
     width: 100%;
