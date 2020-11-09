@@ -2,7 +2,7 @@ import React from 'react'
 var FontAwesome = require('react-fontawesome')
 
 export default function DisplayTweets(props) {
-  const { full_text, user, created_at, favorite_count, retweet_count, entities } = props.tweet
+  const { full_text, user, created_at, favorite_count, retweet_count, entities, display_text_range } = props.tweet
   return (
     <div className="card">
       <div className="image-wrapper">
@@ -43,7 +43,7 @@ export default function DisplayTweets(props) {
         <div className="last-row">
           <div className="comments">
             <FontAwesome className="far fa-comment" name="comment" />
-            <a href="/#">1k</a>
+            <a href="/#">{display_text_range[1]}</a>
           </div>
           <div className="retweets">
             <FontAwesome className="fas fa-retweet" name="retweet" />
