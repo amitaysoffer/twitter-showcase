@@ -136,6 +136,10 @@ nav li:hover {
   font-family: 'Lemon', cursive;
 }
 
+.img-twitter-logo img {
+  width: 90%;
+}
+
 /* Mobile */
 @media(max-width: 650px) {
   .row {
