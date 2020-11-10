@@ -65,7 +65,7 @@
 
 @media(max-width: 850px) {
   #random-container {
-    padding: 10px;
+    padding: 0;
   }
 
   #random-container .card.showcase-card {
