@@ -21,11 +21,15 @@ function Search() {
       axios.get(`api/username/?string=${inputValue}`, {
       })
         .then(res => {
+          renderInputMessage(inputValue, 'success')
           setTweets(res.data)
         })
         .catch(err => {
-          alert('There is no user under that name')
-          console.log('error client side', err)
+          inputValue ?
+            renderInputMessage(`No results for "${inputValue}"`, 'warning') :
+            renderInputMessage('Cant have an empty search', 'error')
+
+          console.log('error username response client side', err)
         })
     } else {
       axios.get(`api/content/?string=${inputValue}`, {
@@ -35,13 +39,13 @@ function Search() {
             renderInputMessage(inputValue, 'success')
             setTweets(res.data.statuses)
           } else if (inputValue) {
-            renderInputMessage('No tweets with that content', 'warning')
-          } else {
+            renderInputMessage(`No results for "${inputValue}"`, 'warning')
           }
         }).catch(err => {
-          !inputValue ?
-            renderInputMessage('Cant have an empty search', 'error') :
-            console.log('error client side', err)
+          if (inputValue) {
+            renderInputMessage('Cant have an empty search', 'error')
+          }
+          console.log('error content response client side', err)
         })
     }
     setInputValue('')

@@ -24,14 +24,19 @@
   max-width: 250px;
 }
 
-#random-container .content-wrapper {
+#random-container .random-card .content-wrapper {
+  font-size: 25px;
+  text-align: start;
+}
+
+#random-container .showcase-card .content-wrapper {
+  font-size: 16px;
   text-align: center;
+  padding: 5px;
 }
 
 #random-container .card.random-card {
   padding: 5px;
-  color: #27C6DA;
-  cursor: pointer;
   margin: 10px auto;
   box-shadow: 0 8px 6px -6px white;
   width: 70%;
@@ -39,9 +44,6 @@
 
 #random-container .card.showcase-card {
   padding-top: 10px;
-  box-shadow: 0 8px 6px -6px white;
-  cursor: pointer;
-  width: 200px;
 }
 
 .showcase-card:hover {
@@ -90,8 +92,13 @@
 
 
 @media(max-width: 650px) {
-  #random-container .card.showcase-card {
+  #random-container .card.showcase-card, 
+    #random-container .card.random-card {
     width: 100%;
+  }
+
+  #random-container .random-card .content-wrapper {
+    font-size: 20px;
   }
 }
 

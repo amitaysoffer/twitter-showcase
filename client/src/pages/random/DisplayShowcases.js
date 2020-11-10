@@ -8,7 +8,7 @@ function DisplayShowcases(props) {
       <div className="image-wrapper">
         <img src={user.profile_image_url.replace('normal', '400x400')} alt="profileImage" />
       </div>
-      <div className="content-wrapper">
+      <div className="content-wrapper center">
         {/* <div className="first-row"> */}
           {/* <div className="user"> */}
             <p>@{user.screen_name}</p>

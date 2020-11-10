@@ -24,11 +24,11 @@ function DisplayRandomTweet(props) {
             <FontAwesome className="fas fa-paw" name="paw" />
           </div>
           <div className="date">
-            <span>{created_at.split('+')[0]}</span>
+            <p>{created_at.split('+')[0]}</p>
           </div>
         </div>
         <div className="text">
-          <span>{full_text.substring(props.randomTweet.display_text_range[0], props.randomTweet.display_text_range[1] + 1)}</span>
+          <p>{full_text.substring(props.randomTweet.display_text_range[0], props.randomTweet.display_text_range[1] + 1)}</p>
         </div>
         <div className="link">
           <a href={entities.media ? entities.media[0].expanded_url : null} target="_blank" rel="noopener noreferrer">
