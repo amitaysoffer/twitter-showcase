@@ -1,8 +1,13 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 const axios = require('axios');
 require('dotenv').config();
+
+app.use('/', express.static(path.join(__dirname, 'client/build')));
+
+app.listen(port, () => `Server running on port ${port}`);
 
 let bearer;
 let getToken = () => {
@@ -105,4 +110,3 @@ app.get('/api/showcases', async (req, res) => {
   res.json(randomTweet)
 });
 
-app.listen(port, () => `Server running on port ${port}`);
