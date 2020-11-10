@@ -1,5 +1,5 @@
 import React from 'react'
-import Bird from '../../images/home-logo-bird.png'
+import Bird from '../../images/twitter-logo-bird.png'
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
         <div className="center">
           <h1 className="home-title">Twitter Showcase</h1>
           <Link to="/search" >
-            <button className="btn">Search Tweets !</button>
+            <button className="btn home-btn">Search Tweets !</button>
           </Link>
         </div>
       </div>

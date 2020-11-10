@@ -1,5 +1,8 @@
 import React from 'react'
-var FontAwesome = require('react-fontawesome')
+import { BiBadgeCheck } from 'react-icons/bi'
+import { VscCircleFilled } from 'react-icons/vsc'
+import { AiOutlineHeart, AiOutlineRetweet } from 'react-icons/ai'
+import { FaRegComment } from 'react-icons/fa'
 
 function DisplayRandomTweet(props) {
   const { full_text, user, created_at, favorite_count, retweet_count, entities, display_text_range } = props.randomTweet
@@ -17,13 +20,13 @@ function DisplayRandomTweet(props) {
         <div className="first-row">
           <div className="user">
             <span>{user.name}</span>
-            <FontAwesome className="far fa-check-double" name="check" />
+            <BiBadgeCheck />
           </div>
           <div className="username">
             <span>@{user.screen_name}</span>
-            <FontAwesome className="fas fa-paw" name="paw" />
           </div>
           <div className="date">
+          <VscCircleFilled />
             <p>{created_at.split('+')[0]}</p>
           </div>
         </div>
@@ -43,15 +46,15 @@ function DisplayRandomTweet(props) {
         </div>
         <div className="last-row">
           <div className="comments">
-            <FontAwesome className="far fa-comment" name="comment" />
+          <FaRegComment />
             <a href="/#">{display_text_range[1]}</a>
           </div>
           <div className="retweets">
-            <FontAwesome className="fas fa-retweet" name="retweet" />
+          <AiOutlineRetweet />
             <a href="/#">{retweet_count}</a>
           </div>
           <div className="likes">
-            <FontAwesome className="far fa-heart" name="heart" />
+          <AiOutlineHeart />
             <a href="/#">{favorite_count}</a>
           </div>
         </div>

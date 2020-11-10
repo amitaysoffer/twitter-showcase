@@ -25,8 +25,12 @@
 }
 
 #random-container .random-card .content-wrapper {
-  font-size: 25px;
+  font-size: 20px;
   text-align: start;
+}
+
+#random-container .showcase-card {
+ cursor: pointer;
 }
 
 #random-container .showcase-card .content-wrapper {
@@ -39,7 +43,7 @@
   padding: 5px;
   margin: 10px auto;
   box-shadow: 0 8px 6px -6px white;
-  width: 70%;
+  width: 60%;
 }
 
 #random-container .card.showcase-card {
@@ -54,6 +58,11 @@
   width: 100%;
 }
 
+#random-container .username,
+#random-container .date {
+  padding-left: 10px;
+}
+
 @media(max-width: 850px) {
   #random-container {
     padding: 10px;
@@ -64,9 +73,9 @@
   }
 
   #random-container 
-   .description,
-   .followers, 
-   .user span:first-child {
+  .description, 
+  .followers, 
+  #random-container .user span:first-child {
     display: none;
   }
 
@@ -95,10 +104,6 @@
   #random-container .card.showcase-card, 
     #random-container .card.random-card {
     width: 100%;
-  }
-
-  #random-container .random-card .content-wrapper {
-    font-size: 20px;
   }
 }
 

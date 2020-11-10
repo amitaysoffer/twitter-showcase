@@ -1,13 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-var FontAwesome = require('react-fontawesome')
+import { FiTwitter } from 'react-icons/fi'
 
 function Navbar() {
   return (
     <nav className="" id="navbar-container">
       <NavLink exact to='/'>
         <h1 className="logo">
-          <FontAwesome className="fab fa-twitter" name="twitter" size="2x" />
+          <FiTwitter size="2em"/>
         </h1>
       </NavLink>
       <ul className="nav-links">

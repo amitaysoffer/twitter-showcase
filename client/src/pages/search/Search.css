@@ -32,6 +32,12 @@
   margin: 8px 15px;
   font-size: 20px;
   background: #5d83b0;
+  transition: 0.4s;
+  
+}
+.btn:hover {
+  background-color: #fff;
+  color: #333;
 }
 
 #search-container .card {
@@ -57,7 +63,7 @@
 }
 
 #search-container .content-wrapper {
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -80,10 +86,16 @@
 .first-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.first-row span {
-  margin-right: 10px;
+.first-row div, .likes, .retweets, .comments {
+  display: flex;
+  align-items: center;
+}
+
+#search-container .username {
+  padding-left: 10px;
 }
 
 .last-row {
@@ -170,6 +182,10 @@
   .card {
     grid-template-columns: 1fr;
     padding: 5px;
+  }
+
+  #search-container .card {
+    width: 100%;
   }
 
   #search-container .image-wrapper img {
