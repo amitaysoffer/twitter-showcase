@@ -179,6 +179,10 @@
   .btn {
     width: 100%;
   }
+
+  #search-container .btn {
+    margin: 8px 0px;
+  }
   .card {
     grid-template-columns: 1fr;
     padding: 5px;
