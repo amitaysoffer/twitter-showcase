@@ -1,8 +1,9 @@
 const express = require('express');
+const app = express();
+// const port = procees.env.PORT || 5000;
+const port = 5000;
 const axios = require('axios');
 require('dotenv').config();
-const app = express();
-const port = 5000;
 
 let bearer;
 let getToken = () => {
@@ -30,6 +31,7 @@ let getToken = () => {
   return bearer;
 };
 
+// Search by Username
 app.get('/api/username', async (req, res) => {
   const token = await getToken()
   const username = req.query.string;
@@ -48,7 +50,7 @@ app.get('/api/username', async (req, res) => {
     })
 });
 
-// Search by content
+// Search by Content
 app.get('/api/content', async (req, res) => {
   const token = await getToken()
   const content = req.query.string;
@@ -67,7 +69,7 @@ app.get('/api/content', async (req, res) => {
     })
 });
 
-// Random tweet
+// Get Random tweet
 app.get('/api/random', async (req, res) => {
   const token = await getToken()
   const queryString = req.query.string;
@@ -87,7 +89,7 @@ app.get('/api/random', async (req, res) => {
     })
 });
 
-// Showcase tweets
+// Show Showcase tweets
 app.get('/api/showcases', async (req, res) => {
   const token = await getToken()
   const usernames = req.query.string.split(',');
