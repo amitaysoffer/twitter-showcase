@@ -34,7 +34,6 @@ function Random() {
       url: `api/random/?string=${randomTweet}&count=20`,
     })
       .then(res => {
-        console.log(res.data)
         setRandomTweet(res.data)
       })
       .catch(err => {

@@ -21,6 +21,7 @@ function Search() {
       axios.get(`api/username/?string=${inputValue}`, {
       })
         .then(res => {
+          debugger
           renderInputMessage(inputValue, 'success')
           setTweets(res.data)
         })
@@ -35,6 +36,7 @@ function Search() {
       axios.get(`api/content/?string=${inputValue}`, {
       })
         .then(res => {
+          debugger
           if (inputValue && res.data.statuses.length > 0) {
             renderInputMessage(inputValue, 'success')
             setTweets(res.data.statuses)
