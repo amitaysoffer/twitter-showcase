@@ -5,7 +5,15 @@ const port = process.env.PORT || 3000;
 const axios = require('axios');
 require('dotenv').config();
 
-app.use('/', express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static('./server/static/'));
+// app.use(express.static('./client/dist/'));
+// app.use(express.static('./node_modules'));
+
+
+// app.use(express.static('public'));
+// app.use(express.static(__dirname + '/node_modules'));
+
+// app.use('/', express.static(path.join(__dirname, 'client/build')));
 // app.use('/serach', express.static(path.join(__dirname, 'client/build')));
 
 app.listen(port, () => `Server running on port ${port}`);
