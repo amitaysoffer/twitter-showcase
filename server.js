@@ -123,4 +123,5 @@ app.get('/api/showcases', async (req, res) => {
   res.json(randomTweet)
 });
 
+
 app.get("/*", (req, res) => { res.sendFile(path.join(__dirname, "client", "build", "index.html")); });
