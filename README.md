@@ -4,7 +4,7 @@
 
 <img src="https://img.icons8.com/plasticine/480/000000/react.png" width="100"/><img src="https://img.icons8.com/color/480/000000/css3.png" width="100"/><img src="https://img.icons8.com/color/480/000000/html-5.png" width="100"/><img src="https://img.icons8.com/color/480/000000/heroku.png" width="100"/><img src="https://img.icons8.com/color/480/000000/nodejs.png" width="100"/>
 
-Check out the app [HERE](https://as-twitter-showcase.herokuapp.com/search)!
+### Check out the app [HERE](https://as-twitter-showcase.herokuapp.com/search)!
 
 ## Instruction & How to use this app
 
