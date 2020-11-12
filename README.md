@@ -4,7 +4,7 @@
 
 <img src="https://img.icons8.com/plasticine/480/000000/react.png" width="100"/><img src="https://img.icons8.com/color/480/000000/css3.png" width="100"/><img src="https://img.icons8.com/color/480/000000/html-5.png" width="100"/><img src="https://img.icons8.com/color/480/000000/heroku.png" width="100"/><img src="https://img.icons8.com/color/480/000000/nodejs.png" width="100"/>
 
-Check out the app [HERE](https://twittershowcase.azurewebsites.net/)!
+Check out the app [HERE](https://as-twitter-showcase.herokuapp.com/search)!
 
 ## Instruction & How to use this app
 
@@ -24,7 +24,7 @@ There was a lot of new experience to gain while building this application and th
 
 ## Desktop
 
-<img src="https://user-images.githubusercontent.com/31068256/98990017-d5707e80-2521-11eb-9064-cb8b2025fcfa.png" width="500"/><img src="https://user-images.githubusercontent.com/31068256/98990076-e7522180-2521-11eb-84e8-bbb818326e9b.png" width="500" /><img src="https://user-images.githubusercontent.com/31068256/98990104-f1742000-2521-11eb-9583-ebebb85b305f.png" width="500" />
+<img src="https://user-images.githubusercontent.com/31068256/98990017-d5707e80-2521-11eb-9064-cb8b2025fcfa.png" width="700"/><img src="https://user-images.githubusercontent.com/31068256/98990076-e7522180-2521-11eb-84e8-bbb818326e9b.png" width="700" /><img src="https://user-images.githubusercontent.com/31068256/98990104-f1742000-2521-11eb-9583-ebebb85b305f.png" width="700" />
 
 ## Mobile
 
