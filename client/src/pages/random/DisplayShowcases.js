@@ -9,14 +9,8 @@ function DisplayShowcases(props) {
         <img src={user.profile_image_url.replace('normal', '400x400')} alt="profileImage" />
       </div>
       <div className="content-wrapper center">
-        {/* <div className="first-row"> */}
-          {/* <div className="user"> */}
-            <p>@{user.screen_name}</p>
-          {/* </div> */}
-        {/* </div> */}
-        {/* {/* <div className="followers"> */} 
-          <p>{user.followers_count} Followers</p>
-        {/* </div> */}
+        <p>@{user.screen_name}</p>
+        <p>{user.followers_count} Followers</p>
       </div>
     </div>
   )

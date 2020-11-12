@@ -1,8 +1,6 @@
 import React from 'react'
 
 export default function SearchForm(props) {
-  // console.log(props.inputMessage)
-
   return (
     <form>
       <input

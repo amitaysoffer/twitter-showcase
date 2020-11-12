@@ -5,11 +5,7 @@ const port = process.env.PORT || 3000;
 const axios = require('axios');
 require('dotenv').config();
 
-
 app.use('/', express.static(path.join(__dirname, 'client/build')));
-
-
-app.listen(port, () => `Server running on port ${port}`);
 
 let bearer;
 let getToken = () => {
@@ -115,3 +111,4 @@ app.get('/api/showcases', async (req, res) => {
 
 app.get("/*", (req, res) => { res.sendFile(path.join(__dirname, "client", "build", "index.html")); });
 
+app.listen(port, () => `Server running on port ${port}`);
