@@ -6,7 +6,13 @@
 
 Check out the app [HERE](https://twittershowcase.azurewebsites.net/)!
 
-<img src="https://user-images.githubusercontent.com/31068256/98990017-d5707e80-2521-11eb-9064-cb8b2025fcfa.png" width="250" ><img src="https://user-images.githubusercontent.com/31068256/98990076-e7522180-2521-11eb-84e8-bbb818326e9b.png" width="250" ><img src="https://user-images.githubusercontent.com/31068256/98990104-f1742000-2521-11eb-9583-ebebb85b305f.png" width="250" >
+## Desktop
+
+<img src="https://user-images.githubusercontent.com/31068256/98990017-d5707e80-2521-11eb-9064-cb8b2025fcfa.png" width="500"/><img src="https://user-images.githubusercontent.com/31068256/98990076-e7522180-2521-11eb-84e8-bbb818326e9b.png" width="500" /><img src="https://user-images.githubusercontent.com/31068256/98990104-f1742000-2521-11eb-9583-ebebb85b305f.png" width="500" />
+
+## Mobile
+
+<img src="https://user-images.githubusercontent.com/31068256/98990135-fb961e80-2521-11eb-9551-710f885dd2e9.png" width="300"/><img src="https://user-images.githubusercontent.com/31068256/98990191-018bff80-2522-11eb-93db-aedb543979e3.png" width="300"/><img src="https://user-images.githubusercontent.com/31068256/98990208-0781e080-2522-11eb-807e-4662bb3d8422.png" width="300"/>
 
 ## Instruction & How to use this app
 
