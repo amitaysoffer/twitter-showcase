@@ -17,7 +17,7 @@ function App() {
           <Route path="/search" component={Search} />
           <Route path="/random" component={Random} />
         </main>
-        <Footer />
+          <Footer />
       </div>
     </Router>
   );
