@@ -28,7 +28,7 @@ function Search() {
           inputValue
             ? renderInputMessage(`No results for "${inputValue}"`, "warning")
             : renderInputMessage("Cant have an empty search", "error");
-
+          א
           console.log("error username response client side", err);
         });
     } else {
