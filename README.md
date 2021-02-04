@@ -1,6 +1,6 @@
 # Twitter Showcase
 
-> A full stack web app built in React.js and Node. It utilizes Twitter's APIs to allow users to search recent tweets of their favorite users.
+> A web app built in React.js and Node. It utilises Twitter's APIs to allow users to search recent tweets of their favourite users.
 
 <img src="https://img.icons8.com/plasticine/480/000000/react.png" width="100"/><img src="https://img.icons8.com/color/480/000000/css3.png" width="100"/><img src="https://img.icons8.com/color/480/000000/html-5.png" width="100"/><img src="https://img.icons8.com/color/480/000000/heroku.png" width="100"/><img src="https://img.icons8.com/color/480/000000/nodejs.png" width="100"/>
 
