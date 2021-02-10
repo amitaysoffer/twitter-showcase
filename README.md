@@ -28,6 +28,6 @@ There was a lot of new experience to gain while building this application and th
 
 ### Amitay Soffer- Full Stack Web Developer
 
-<a href="https://www.esncz.org/sites/default/files/imce/under-construction.jpg" target="_blank" rel="noopener">Portfolio Website</a>
+<a href="https://www.amitaysoffer.me/" target="_blank" rel="noopener">Portfolio Website</a>
 
 [LinkedIn](https://www.linkedin.com/in/amitay-soffer-137304151/)
